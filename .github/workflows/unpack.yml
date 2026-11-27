@@ -1,0 +1,27 @@
+name: Unpack CV
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Unpack cv_site.zip into repository root
+        if: hashFiles('cv_site.zip') != ''
+        run: |
+          unzip -o cv_site.zip -d .
+          rm -f cv_site.zip
+          touch .nojekyll
+          git config user.name "issamxx"
+          git config user.email "deraiyissame@gmail.com"
+          git add -A
+          git commit -m "Deploy Issam Derai Interactive Executive CV (EN / FR / AR)"
+          git push origin main
