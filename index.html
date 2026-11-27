@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issam Derai — Interactive CV | Full-Stack Web &amp; Mobile Developer · Cybersecurity &amp; Networks</title>
+  <meta name="description" content="Interactive Executive CV of Issam Derai — Full-Stack Web &amp; Mobile Developer, E-Commerce Specialist, and Network &amp; Cybersecurity Technician (Licence Pro 2026). Available for Remote &amp; Gulf / International Relocation.">
+  <meta property="og:title" content="Issam Derai — Interactive CV &amp; Technical Portfolio">
+  <meta property="og:description" content="Full-Stack Web &amp; Mobile Developer · E-Commerce · Network, Systems &amp; Cybersecurity | EN / FR / AR">
+  <meta property="og:image" content="https://issamxx.github.io/cv/assets/avatar.jpg">
+  <link rel="icon" type="image/jpeg" href="assets/avatar.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f1f5f9;
+      --paper: #ffffff;
+      --surface: #f8fafc;
+      --ink: #0f172a;
+      --ink-2: #334155;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #1d4ed8;
+      --accent-2: #0284c7;
+      --accent-soft: rgba(29, 78, 216, 0.08);
+      --green: #059669;
+      --green-soft: rgba(5, 150, 105, 0.12);
+      --hero-bg: linear-gradient(135deg, #0b1b34 0%, #132c52 55%, #0f2947 100%);
+      --shadow: 0 20px 55px rgba(15, 23, 42, 0.09);
+      --radius: 18px;
+    }
+    html[data-theme="dark"] {
+      --bg: #020617;
+      --paper: #0f172a;
+      --surface: #1e293b;
+      --ink: #f8fafc;
+      --ink-2: #cbd5e1;
+      --muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.18);
+      --accent: #38bdf8;
+      --accent-2: #60a5fa;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --green: #34d399;
+      --green-soft: rgba(52, 211, 153, 0.14);
+      --hero-bg: linear-gradient(135deg, #071326 0%, #0f2444 55%, #0c1d38 100%);
+      --shadow: 0 24px 65px rgba(0, 0, 0, 0.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Cairo', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      transition: background 0.25s ease, color 0.25s ease;
+      padding-bottom: 56px;
+    }
+    html[dir="rtl"] body {
+      font-family: 'Cairo', 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    /* Sticky Top Utility Bar */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.86);
+      border-bottom: 1px solid var(--border);
+    }
+    html[data-theme="dark"] .topbar { background: rgba(2, 6, 23, 0.84); }
+    .topbar-inner {
+      max-width: 1080px; margin: 0 auto; padding: 11px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    .top-brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 14px; color: var(--ink); text-decoration: none;
+    }
+    .status-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 99px;
+      background: var(--green-soft); color: var(--green);
+    }
+    .dot-live {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.65); }
+      70% { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .top-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .lang-group {
+      display: inline-flex; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 99px; padding: 3px;
+    }
+    .lang-btn {
+      border: none; background: transparent; color: var(--muted);
+      padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 800;
+      cursor: pointer; transition: 0.2s; font-family: inherit;
+    }
+    .lang-btn.active { background: var(--accent); color: #fff; }
+    .icon-btn {
+      border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+      height: 34px; padding: 0 12px; border-radius: 10px; font-size: 12.5px; font-weight: 700;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+      transition: 0.2s; font-family: inherit;
+    }
+    .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-dl {
+      background: linear-gradient(135deg, #2563eb, #0284c7); color: #fff !important; border: none;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.28);
+    }
+    .btn-dl:hover { transform: translateY(-1px); filter: brightness(1.06); }
+
+    /* Main CV Paper Container */
+    .cv-wrap {
+      max-width: 1080px; margin: 28px auto 0; padding: 0 20px;
+    }
+    .cv-sheet {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    /* Executive Header */
+    .cv-hero {
+      background: var(--hero-bg);
+      color: #fff;
+      padding: 36px 38px 32px;
+      border-bottom: 4px solid #38bdf8;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .avatar-ring {
+      width: 126px; height: 126px; border-radius: 50%; padding: 4px;
+      background: linear-gradient(135deg, #38bdf8, #34d399);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+      flex-shrink: 0;
+    }
+    .avatar-ring img {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;
+      border: 3px solid #0b1b34;
+    }
+    .hero-top-row {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    .cv-name {
+      font-size: clamp(26px, 3.6vw, 38px); font-weight: 900; letter-spacing: 0.6px; line-height: 1.1;
+    }
+    .reloc-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 99px; font-size: 12px; font-weight: 700;
+      background: rgba(56, 189, 248, 0.16); border: 1px solid rgba(56, 189, 248, 0.45); color: #bae6fd;
+    }
+    .cv-headline {
+      font-size: clamp(14px, 1.7vw, 17px); font-weight: 600; color: #93c5fd;
+      margin: 8px 0 16px;
+    }
+    .contact-grid {
+      display: flex; flex-wrap: wrap; gap: 8px 14px;
+    }
+    .c-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 11px; border-radius: 9px; font-size: 12.5px; font-weight: 600;
+      background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #f1f5f9; text-decoration: none; transition: 0.2s;
+    }
+    .c-chip:hover { background: rgba(56, 189, 248, 0.22); border-color: #38bdf8; }
+
+    /* KPI Metrics Strip */
+    .kpi-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .kpi {
+      padding: 16px 20px; text-align: center;
+      border-inline-end: 1px solid var(--border);
+    }
+    .kpi:last-child { border-inline-end: none; }
+    .kpi strong { display: block; font-size: 17px; font-weight: 900; color: var(--accent); }
+    .kpi span { font-size: 12px; font-weight: 600; color: var(--muted); }
+
+    /* Two-Column Executive Layout */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 315px 1fr;
+    }
+    .cv-sidebar {
+      background: var(--surface);
+      border-inline-end: 1px solid var(--border);
+      padding: 30px 26px;
+      display: flex; flex-direction: column; gap: 28px;
+    }
+    .cv-main {
+      padding: 30px 34px;
+      display: flex; flex-direction: column; gap: 30px;
+    }
+
+    .sec-title {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 13px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 8px; margin-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+      position: relative;
+    }
+    .sec-title::after {
+      content: ""; position: absolute; bottom: -2px; inset-inline-start: 0;
+      width: 48px; height: 2px; background: var(--accent);
+    }
+
+    /* Summary */
+    .summary-txt { font-size: 14.5px; color: var(--ink-2); line-height: 1.72; }
+
+    /* Timeline Experience */
+    .timeline { display: flex; flex-direction: column; gap: 22px; }
+    .exp-card {
+      position: relative;
+      padding-inline-start: 20px;
+      border-inline-start: 2px solid var(--border);
+    }
+    .exp-card::before {
+      content: ""; position: absolute; top: 5px; inset-inline-start: -7px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--paper); border: 2.5px solid var(--accent);
+    }
+    .exp-top {
+      display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;
+    }
+    .exp-role { font-size: 15.5px; font-weight: 800; color: var(--ink); }
+    .exp-date {
+      font-size: 12px; font-weight: 800; color: var(--accent);
+      background: var(--accent-soft); padding: 2px 10px; border-radius: 99px;
+    }
+    .exp-org { font-size: 13px; font-weight: 700; color: var(--muted); margin: 3px 0 9px; }
+    .exp-org a { color: var(--accent); text-decoration: none; }
+    .exp-org a:hover { text-decoration: underline; }
+    .exp-list {
+      padding-inline-start: 18px; display: flex; flex-direction: column; gap: 6px;
+    }
+    .exp-list li { font-size: 13.5px; color: var(--ink-2); }
+    .exp-list strong { color: var(--ink); }
+
+    /* Projects Filter & Grid */
+    .proj-filters { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+    .pf-btn {
+      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+      padding: 5px 12px; border-radius: 99px; font-size: 12px; font-weight: 700;
+      cursor: pointer; transition: 0.2s; font-family: inherit;
+    }
+    .pf-btn.active, .pf-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .proj-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-inline-start: 3.5px solid var(--accent);
+      border-radius: 13px; padding: 15px 16px;
+      display: flex; flex-direction: column; transition: 0.2s;
+    }
+    .proj-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .proj-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+    .proj-name { font-size: 14.5px; font-weight: 800; color: var(--ink); }
+    .proj-cat {
+      font-size: 10.5px; font-weight: 800; padding: 2px 8px; border-radius: 99px;
+      background: var(--accent-soft); color: var(--accent); white-space: nowrap;
+    }
+    .proj-desc { font-size: 12.8px; color: var(--ink-2); flex: 1; margin-bottom: 11px; }
+    .proj-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+    .p-tech {
+      font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 6px;
+      background: var(--paper); border: 1px solid var(--border); color: var(--muted);
+    }
+    .proj-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .proj-link {
+      font-size: 12px; font-weight: 800; color: var(--accent); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .proj-link:hover { text-decoration: underline; }
+
+    /* Sidebar Skills */
+    .sk-group { margin-bottom: 16px; }
+    .sk-group:last-child { margin-bottom: 0; }
+    .sk-label { font-size: 12px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+    .sk-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .sk-tag {
+      font-size: 11.8px; font-weight: 700; padding: 4px 9px; border-radius: 7px;
+      background: var(--paper); border: 1px solid var(--border); color: var(--ink-2);
+    }
+
+    /* Sidebar Education */
+    .edu-card {
+      background: var(--paper); border: 1px solid var(--border); border-radius: 12px;
+      padding: 13px 14px; margin-bottom: 10px;
+    }
+    .edu-card:last-child { margin-bottom: 0; }
+    .edu-year { font-size: 11.5px; font-weight: 800; color: var(--accent); }
+    .edu-deg { font-size: 13.5px; font-weight: 800; color: var(--ink); margin: 2px 0; }
+    .edu-school { font-size: 12.3px; color: var(--muted); }
+
+    /* Languages */
+    .lang-row { margin-bottom: 11px; }
+    .lang-row:last-child { margin-bottom: 0; }
+    .lang-meta { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; }
+    .lang-meta strong { color: var(--ink); }
+    .lang-meta span { color: var(--muted); font-size: 12px; font-weight: 600; }
+    .bar { height: 6px; border-radius: 99px; background: var(--border); overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--accent), #10b981); }
+
+    /* PDF Download Box */
+    .dl-box {
+      background: var(--paper); border: 1px solid var(--border); border-radius: 14px;
+      padding: 15px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .dl-box p { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+    .dl-link {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 11px; border-radius: 9px; text-decoration: none;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--ink); font-size: 12.5px; font-weight: 700; transition: 0.2s;
+    }
+    .dl-link:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Footer */
+    .cv-footer {
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 18px 34px; display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px; font-size: 12.5px; color: var(--muted);
+    }
+    .cv-footer a { color: var(--accent); font-weight: 700; text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .cv-hero { grid-template-columns: 1fr; text-align: center; padding: 28px 22px; }
+      .avatar-ring { margin: 0 auto; }
+      .hero-top-row, .contact-grid { justify-content: center; }
+      .cv-body { grid-template-columns: 1fr; }
+      .cv-sidebar { border-inline-end: none; border-bottom: 1px solid var(--border); order: 2; }
+      .cv-main { order: 1; padding: 24px 20px; }
+      .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+      .proj-grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body { background: #fff !important; padding: 0; }
+      .topbar, .proj-filters, .no-print { display: none !important; }
+      .cv-wrap { max-width: 100%; margin: 0; padding: 0; }
+      .cv-sheet { border: none; border-radius: 0; box-shadow: none; }
+      .cv-body { grid-template-columns: 270px 1fr; }
+      .proj-grid { grid-template-columns: repeat(2, 1fr); }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="topbar no-print">
+    <div class="topbar-inner">
+      <a href="#top" class="top-brand">
+        <span>ISSAM DERAI</span>
+        <span class="status-pill"><span class="dot-live"></span> <span data-i18n="avail_short">Open to Work · Gulf, Europe &amp; Remote</span></span>
+      </a>
+      <div class="top-actions">
+        <div class="lang-group" role="group" aria-label="Language">
+          <button class="lang-btn active" id="l-en" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" id="l-fr" onclick="setLang('fr')">FR</button>
+          <button class="lang-btn" id="l-ar" onclick="setLang('ar')">العربية</button>
+        </div>
+        <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle Theme">🌙</button>
+        <button class="icon-btn" onclick="window.print()" data-i18n="btn_print">🖨️ Print</button>
+        <a id="mainPdfBtn" href="pdf/Issam_Derai_CV_EN.pdf" download class="icon-btn btn-dl" data-i18n="btn_dl">⬇ Download PDF CV</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Interactive CV Paper -->
+  <div class="cv-wrap" id="top">
+    <article class="cv-sheet">
+
+      <!-- Executive Header -->
+      <header class="cv-hero">
+        <div class="avatar-ring">
+          <img src="assets/avatar.jpg" alt="Issam Derai">
+        </div>
+        <div>
+          <div class="hero-top-row">
+            <h1 class="cv-name" data-i18n="name">ISSAM DERAI</h1>
+            <span class="reloc-badge" data-i18n="reloc">🌍 Remote &amp; International Relocation (Gulf · Europe)</span>
+          </div>
+          <p class="cv-headline" data-i18n="headline">Full-Stack Web &amp; Mobile Developer · E-Commerce · Network, Systems &amp; Cybersecurity Specialist</p>
+          <div class="contact-grid">
+            <a class="c-chip" href="mailto:deraiyissame@gmail.com">✉️ <span dir="ltr">deraiyissame@gmail.com</span></a>
+            <a class="c-chip" href="https://wa.me/212689536904" target="_blank">📞 <span dir="ltr">+212 6 89 53 69 04</span></a>
+            <span class="c-chip">📍 <span data-i18n="loc">Marrakech, Morocco</span></span>
+            <a class="c-chip" href="https://www.linkedin.com/in/issam-derai" target="_blank">in/issam-derai ↗</a>
+            <a class="c-chip" href="https://github.com/issamxx" target="_blank">github.com/issamxx ↗</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- KPI Highlights -->
+      <div class="kpi-strip">
+        <div class="kpi"><strong data-i18n="k1_v">B.Tech (Licence Pro)</strong><span data-i18n="k1_l">Web Networks &amp; Security (2026)</span></div>
+        <div class="kpi"><strong data-i18n="k2_v">3+ Years</strong><span data-i18n="k2_l">Full-Stack, E-Commerce &amp; IT</span></div>
+        <div class="kpi"><strong data-i18n="k3_v">6+ Production Projects</strong><span data-i18n="k3_l">Laravel, Mobile &amp; DevSecOps</span></div>
+        <div class="kpi"><strong>AR · EN · FR</strong><span data-i18n="k4_l">Trilingual Communication</span></div>
+      </div>
+
+      <!-- Two-Column CV Content -->
+      <div class="cv-body">
+
+        <!-- Sidebar -->
+        <aside class="cv-sidebar">
+
+          <!-- Technical Skills -->
+          <section>
+            <h2 class="sec-title" data-i18n="sec_skills">Technical Skills</h2>
+            <div class="sk-group">
+              <div class="sk-label" data-i18n="sk_web">Web, Backend &amp; E-Commerce</div>
+              <div class="sk-tags">
+                <span class="sk-tag">Laravel 12</span>
+                <span class="sk-tag">PHP 8</span>
+                <span class="sk-tag">Filament 3</span>
+                <span class="sk-tag">JavaScript (ES6+)</span>
+                <span class="sk-tag">React &amp; TypeScript</span>
+                <span class="sk-tag">Tailwind CSS</span>
+                <span class="sk-tag">Python</span>
+                <span class="sk-tag">Java</span>
+                <span class="sk-tag">MySQL</span>
+                <span class="sk-tag">WordPress / WooCommerce</span>
+                <span class="sk-tag">Technical SEO</span>
+              </div>
+            </div>
+            <div class="sk-group">
+              <div class="sk-label" data-i18n="sk_mob">Mobile Development</div>
+              <div class="sk-tags">
+                <span class="sk-tag">React Native</span>
+                <span class="sk-tag">Expo (Android &amp; iOS)</span>
+                <span class="sk-tag">REST APIs</span>
+                <span class="sk-tag">Responsive RTL/LTR UI</span>
+              </div>
+            </div>
+            <div class="sk-group">
+              <div class="sk-label" data-i18n="sk_sec">Networks, DevOps &amp; Security</div>
+              <div class="sk-tags">
+                <span class="sk-tag">Docker</span>
+                <span class="sk-tag">Nginx Reverse Proxy</span>
+                <span class="sk-tag">CrowdSec IPS</span>
+                <span class="sk-tag">pfSense Firewall</span>
+                <span class="sk-tag">VMware</span>
+                <span class="sk-tag">Linux &amp; Windows Server</span>
+                <span class="sk-tag">HTTP / TLS Auditing</span>
+                <span class="sk-tag">Ngrok</span>
+                <span class="sk-tag">IT &amp; Hardware Support</span>
+              </div>
+            </div>
+            <div class="sk-group">
+              <div class="sk-label" data-i18n="sk_des">Design &amp; Multimedia</div>
+              <div class="sk-tags">
+                <span class="sk-tag">Adobe Photoshop</span>
+                <span class="sk-tag">After Effects</span>
+                <span class="sk-tag">UI/UX Prototyping</span>
+                <span class="sk-tag">Video Editing</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Education -->
+          <section>
+            <h2 class="sec-title" data-i18n="sec_edu">Education</h2>
+            <div class="edu-card">
+              <div class="edu-year">2026</div>
+              <div class="edu-deg" data-i18n="edu1_deg">Professional Bachelor's Degree (Licence Pro)</div>
+              <div class="edu-school" data-i18n="edu1_sch">Web Networks Engineering &amp; Security · Cadi Ayyad University, Marrakech</div>
+            </div>
+            <div class="edu-card">
+              <div class="edu-year">2021</div>
+              <div class="edu-deg" data-i18n="edu2_deg">Scientific Baccalaureate</div>
+              <div class="edu-school" data-i18n="edu2_sch">Experimental Sciences · Lycée Sidi Abdel Rahman</div>
+            </div>
+          </section>
+
+          <!-- Languages -->
+          <section>
+            <h2 class="sec-title" data-i18n="sec_lang">Languages</h2>
+            <div class="lang-row">
+              <div class="lang-meta"><strong data-i18n="lg_ar">Arabic</strong><span data-i18n="lg_native">Native</span></div>
+              <div class="bar"><div class="bar-fill" style="width:100%;"></div></div>
+            </div>
+            <div class="lang-row">
+              <div class="lang-meta"><strong data-i18n="lg_fr">French</strong><span data-i18n="lg_prof">Professional Working</span></div>
+              <div class="bar"><div class="bar-fill" style="width:82%;"></div></div>
+            </div>
+            <div class="lang-row">
+              <div class="lang-meta"><strong data-i18n="lg_en">English</strong><span data-i18n="lg_prof">Professional Working</span></div>
+              <div class="bar"><div class="bar-fill" style="width:80%;"></div></div>
+            </div>
+          </section>
+
+          <!-- Direct PDF Downloads -->
+          <section class="no-print">
+            <h2 class="sec-title" data-i18n="sec_pdf">PDF Resume Versions</h2>
+            <div class="dl-box">
+              <p data-i18n="pdf_sub">Download ATS-friendly PDF copies ready for HR &amp; recruiting teams:</p>
+              <a class="dl-link" href="pdf/Issam_Derai_CV_EN.pdf" download><span>📄 CV — English (PDF)</span><span>⬇</span></a>
+              <a class="dl-link" href="pdf/Issam_Derai_CV_FR.pdf" download><span>📄 CV — Français (PDF)</span><span>⬇</span></a>
+              <a class="dl-link" href="pdf/Issam_Derai_CV_AR.pdf" download><span>📄 السيرة الذاتية — العربية (PDF)</span><span>⬇</span></a>
+            </div>
+          </section>
+
+        </aside>
+
+        <!-- Main Column -->
+        <main class="cv-main">
+
+          <!-- Executive Summary -->
+          <section>
+            <h2 class="sec-title" data-i18n="sec_sum">Professional Summary</h2>
+            <p class="summary-txt" data-i18n="sum_txt">
+              Full-Stack Web &amp; Mobile Developer and Network &amp; Cybersecurity Technician holding a Professional Bachelor's Degree (Licence Pro) in Web Networks Engineering &amp; Security from Cadi Ayyad University (2026). Over 3 years of hands-on freelance and internship experience delivering production websites (including urbagroupe.ma), custom Laravel &amp; React e-commerce platforms, cross-platform mobile apps, Docker/CrowdSec hardened web stacks, and HTTP/TLS security audits. Trilingual in Arabic, English, and French — available immediately for remote roles or relocation to the Gulf (UAE, Saudi Arabia, Qatar) and Europe.
+            </p>
+          </section>
+
+          <!-- Work Experience -->
+          <section>
+            <h2 class="sec-title" data-i18n="sec_exp">Work Experience</h2>
+            <div class="timeline" id="expList"></div>
+          </section>
+
+          <!-- Key Technical Projects & Live Demos -->
+          <section>
+            <h2 class="sec-title" data-i18n="sec_proj">Key Technical Projects &amp; Live Demos</h2>
+            <div class="proj-filters no-print">
+              <button class="pf-btn active" onclick="filterProj('all', this)" data-i18n="pf_all">All Projects (6)</button>
+              <button class="pf-btn" onclick="filterProj('web', this)" data-i18n="pf_web">Web &amp; E-Commerce</button>
+              <button class="pf-btn" onclick="filterProj('sec', this)" data-i18n="pf_sec">Cybersecurity &amp; DevOps</button>
+              <button class="pf-btn" onclick="filterProj('mob', this)" data-i18n="pf_mob">Mobile Apps</button>
+            </div>
+            <div class="proj-grid" id="projGrid"></div>
+          </section>
+
+        </main>
+      </div>
+
+      <!-- Footer -->
+      <footer class="cv-footer">
+        <div><strong data-i18n="name">ISSAM DERAI</strong> · <span data-i18n="foot_role">Full-Stack Web, Mobile &amp; Cybersecurity Interactive CV</span></div>
+        <div class="no-print">
+          <a href="https://www.linkedin.com/in/issam-derai" target="_blank">LinkedIn</a> ·
+          <a href="https://github.com/issamxx" target="_blank">GitHub</a> ·
+          <a href="mailto:deraiyissame@gmail.com">deraiyissame@gmail.com</a>
+        </div>
+      </footer>
+
+    </article>
+  </div>
+
+  <script>
+    let currentLang = "en";
+    let currentProjFilter = "all";
+
+    const I18N = {
+      en: {
+        avail_short: "Open to Work · Gulf, Europe & Remote",
+        btn_print: "🖨️ Print", btn_dl: "⬇ Download PDF CV",
+        name: "ISSAM DERAI",
+        reloc: "🌍 Remote & International Relocation (Gulf · Europe)",
+        headline: "Full-Stack Web & Mobile Developer · E-Commerce · Network, Systems & Cybersecurity Specialist",
+        loc: "Marrakech, Morocco",
+        k1_v: "B.Tech (Licence Pro)", k1_l: "Web Networks & Security (2026)",
+        k2_v: "3+ Years", k2_l: "Full-Stack, E-Commerce & IT",
+        k3_v: "6+ Production Projects", k3_l: "Laravel, Mobile & DevSecOps",
+        k4_l: "Trilingual Communication",
+        sec_skills: "Technical Skills", sk_web: "Web, Backend & E-Commerce", sk_mob: "Mobile Development", sk_sec: "Networks, DevOps & Security", sk_des: "Design & Multimedia",
+        sec_edu: "Education",
+        edu1_deg: "Professional Bachelor's Degree (Licence Pro)", edu1_sch: "Web Networks Engineering & Security · Cadi Ayyad University, Marrakech",
+        edu2_deg: "Scientific Baccalaureate", edu2_sch: "Experimental Sciences · Lycée Sidi Abdel Rahman",
+        sec_lang: "Languages", lg_ar: "Arabic", lg_fr: "French", lg_en: "English", lg_native: "Native", lg_prof: "Professional Working",
+        sec_pdf: "PDF Resume Versions", pdf_sub: "Download ATS-friendly PDF copies ready for HR & recruiting teams:",
+        sec_sum: "Professional Summary",
+        sum_txt: "Full-Stack Web & Mobile Developer and Network & Cybersecurity Technician holding a Professional Bachelor's Degree (Licence Pro) in Web Networks Engineering & Security from Cadi Ayyad University (2026). Over 3 years of hands-on freelance and internship experience delivering production websites (including urbagroupe.ma), custom Laravel & React e-commerce platforms, cross-platform mobile apps, Docker/CrowdSec hardened web stacks, and HTTP/TLS security audits. Trilingual in Arabic, English, and French — available immediately for remote roles or relocation to the Gulf (UAE, Saudi Arabia, Qatar) and Europe.",
+        sec_exp: "Work Experience", sec_proj: "Key Technical Projects & Live Demos",
+        pf_all: "All Projects (6)", pf_web: "Web & E-Commerce", pf_sec: "Cybersecurity & DevOps", pf_mob: "Mobile Apps",
+        foot_role: "Full-Stack Web, Mobile & Cybersecurity Interactive CV"
+      },
+      fr: {
+        avail_short: "Disponible · Golfe, Europe & Remote",
+        btn_print: "🖨️ Imprimer", btn_dl: "⬇ Télécharger CV PDF",
+        name: "ISSAM DERAI",
+        reloc: "🌍 Télétravail & Mobilité Internationale (Golfe · Europe)",
+        headline: "Développeur Web & Mobile Full-Stack · E-Commerce · Technicien Réseaux, Systèmes & Cybersécurité",
+        loc: "Marrakech, Maroc",
+        k1_v: "Licence Pro (Bac+3)", k1_l: "Ingénierie Réseaux Web & Sécurité (2026)",
+        k2_v: "3+ Ans", k2_l: "Full-Stack, E-Commerce & IT",
+        k3_v: "6+ Projets Production", k3_l: "Laravel, Mobile & DevSecOps",
+        k4_l: "Communication Trilingue",
+        sec_skills: "Compétences Techniques", sk_web: "Web, Backend & E-Commerce", sk_mob: "Développement Mobile", sk_sec: "Réseaux, DevOps & Sécurité", sk_des: "Design & Multimédia",
+        sec_edu: "Formation",
+        edu1_deg: "Licence Professionnelle — Ingénierie des Réseaux Web et Sécurité", edu1_sch: "Université Cadi Ayyad, Marrakech",
+        edu2_deg: "Baccalauréat Scientifique", edu2_sch: "Sciences Expérimentales · Lycée Sidi Abdel Rahman",
+        sec_lang: "Langues", lg_ar: "Arabe", lg_fr: "Français", lg_en: "Anglais", lg_native: "Langue maternelle", lg_prof: "Professionnel",
+        sec_pdf: "Versions CV PDF", pdf_sub: "Téléchargez les versions PDF optimisées ATS pour les recruteurs :",
+        sec_sum: "Profil Professionnel",
+        sum_txt: "Développeur Web & Mobile Full-Stack et Technicien Réseaux & Cybersécurité, diplômé d'une Licence Professionnelle en Ingénierie des Réseaux Web et Sécurité (Université Cadi Ayyad, 2026). Plus de 3 ans d'expérience en freelance et en entreprise dans la livraison de sites en production (dont urbagroupe.ma), plateformes e-commerce Laravel & React, applications mobiles cross-platform, infrastructures durcies Docker/CrowdSec et audits de sécurité HTTP/TLS. Trilingue Arabe, Français et Anglais — disponible immédiatement en télétravail ou mobilité internationale (Golfe & Europe).",
+        sec_exp: "Expérience Professionnelle", sec_proj: "Projets Techniques & Démos Live",
+        pf_all: "Tous les Projets (6)", pf_web: "Web & E-Commerce", pf_sec: "Cybersécurité & DevOps", pf_mob: "Apps Mobiles",
+        foot_role: "CV Interactif — Web Full-Stack, Mobile & Cybersécurité"
+      },
+      ar: {
+        avail_short: "متاح للعمل فوراً · الخليج، أوروبا وعن بُعد",
+        btn_print: "🖨️ طباعة", btn_dl: "⬇ تحميل السيرة الذاتية PDF",
+        name: "عصام الدرعي — ISSAM DERAI",
+        reloc: "🌍 العمل عن بُعد أو الانتقال الدولي (الإمارات، السعودية، قطر وأوروبا)",
+        headline: "مطوّر ويب وتطبيقات جوال Full-Stack · التجارة الإلكترونية · الشبكات والأنظمة والأمن السيبراني",
+        loc: "مراكش، المغرب",
+        k1_v: "بكالوريوس مهني (Licence Pro)", k1_l: "هندسة شبكات الويب والأمن (2026)",
+        k2_v: "+3 سنوات", k2_l: "تطوير ويب، متاجر و IT",
+        k3_v: "+6 مشاريع فعلية", k3_l: "Laravel، تطبيقات و DevSecOps",
+        k4_l: "إتقان 3 لغات",
+        sec_skills: "المهارات التقنية", sk_web: "الويب، البرمجة والمتاجر الإلكترونية", sk_mob: "تطوير تطبيقات الجوال", sk_sec: "الشبكات، DevOps والأمن السيبراني", sk_des: "التصميم والمونتاج",
+        sec_edu: "التعليم والشهادات",
+        edu1_deg: "الإجازة المهنية (بكالوريوس تقني) — هندسة شبكات الويب والأمن السيبراني", edu1_sch: "جامعة القاضي عياض، مراكش",
+        edu2_deg: "شهادة البكالوريا العلمية", edu2_sch: "العلوم التجريبية · ثانوية سيدي عبد الرحمن",
+        sec_lang: "اللغات", lg_ar: "العربية", lg_fr: "الفرنسية", lg_en: "الإنجليزية", lg_native: "اللغة الأم", lg_prof: "احترافي (عمل)",
+        sec_pdf: "نسخ السيرة الذاتية PDF", pdf_sub: "حمّل نسخ PDF جاهزة لأنظمة الفرز (ATS) والتقديم المباشر:",
+        sec_sum: "الملخص المهني",
+        sum_txt: "مطوّر ويب وتطبيقات جوال (Full-Stack) وتقني شبكات وأمن سيبراني حاصل على الإجازة المهنية في هندسة شبكات الويب والأمن السيبراني من جامعة القاضي عياض (2026). خبرة عملية تتجاوز 3 سنوات في بناء مواقع شركات منشورة فعلياً (منها urbagroupe.ma)، ومنصات تجارة إلكترونية مخصّصة بـ Laravel و React، وتطبيقات جوال، وتأمين الخوادم عبر Docker و CrowdSec، وفحص ثغرات الويب و HTTP/TLS. أتقن العربية والإنجليزية والفرنسية — متاح فوراً للعمل عن بُعد أو الانتقال للخليج وأوروبا.",
+        sec_exp: "الخبرة المهنية", sec_proj: "أبرز المشاريع التقنية والعروض الحية",
+        pf_all: "جميع المشاريع (6)", pf_web: "الويب والتجارة الإلكترونية", pf_sec: "الأمن السيبراني و DevOps", pf_mob: "تطبيقات الجوال",
+        foot_role: "السيرة الذاتية التفاعلية — تطوير الويب، الجوال والأمن السيبراني"
+      }
+    };
+
+    const EXPERIENCES = [
+      {
+        date: { en: "2023 – Present", fr: "2023 – Présent", ar: "2023 – حتى الآن" },
+        role: { en: "Freelance Full-Stack Web Developer & Security Consultant", fr: "Développeur Web Full-Stack & Consultant Sécurité (Freelance)", ar: "مطوّر ويب Full-Stack ومستشار أمن سيبراني (عمل حر)" },
+        org: { en: "Independent · Remote & International Clients", fr: "Indépendant · Clients Internationaux & Remote", ar: "مستقل · عملاء دوليون وعن بُعد" },
+        bullets: {
+          en: [
+            "<strong>Custom Web &amp; E-Commerce Platforms:</strong> Built production websites (PHP, Laravel, React, JS, MySQL) and WordPress/WooCommerce stores with COD &amp; WhatsApp checkout.",
+            "<strong>Security Audits &amp; Refactoring:</strong> Conducted HTTP/TLS and functional security assessments, patched vulnerabilities, and migrated legacy apps to modern Laravel.",
+            "<strong>IT Support, SEO &amp; Visuals:</strong> Delivered technical on-page SEO, custom PC diagnostics/hardware repair, Photoshop branding, and After Effects promotional videos."
+          ],
+          fr: [
+            "<strong>Sites Web &amp; Boutiques E-Commerce :</strong> Développement de plateformes sur mesure (PHP, Laravel, React, JS, MySQL) et boutiques WooCommerce avec commande COD &amp; WhatsApp.",
+            "<strong>Audits de Sécurité &amp; Refactoring :</strong> Tests fonctionnels et de sécurité, correction de vulnérabilités et migration d'applications existantes vers Laravel.",
+            "<strong>SEO, Support IT &amp; Création Visuelle :</strong> Optimisation SEO Google, maintenance matérielle PC, design Photoshop et montage vidéo After Effects."
+          ],
+          ar: [
+            "<strong>تطوير المواقع والمتاجر الإلكترونية:</strong> بناء مواقع مخصّصة (PHP، Laravel، React، MySQL) ومتاجر إلكترونية سريعة تدعم الدفع عند الاستلام (COD) والربط بواتساب.",
+            "<strong>التدقيق الأمني وتحديث الأنظمة:</strong> فحص أمان المواقع ومعالجة الثغرات وترحيل الأنظمة القديمة إلى إطار Laravel الحديث.",
+            "<strong>تحسين محركات البحث والدعم التقني:</strong> تهيئة SEO على جوجل، صيانة الأجهزة والشبكات، وتصميم الهويات والفيديوهات بـ Photoshop و After Effects."
+          ]
+        }
+      },
+      {
+        date: { en: "May – Aug 2026", fr: "Mai – Août 2026", ar: "ماي – غشت 2026" },
+        role: { en: "Web Development & Cybersecurity Intern", fr: "Stagiaire Développement Web & Cybersécurité", ar: "متدرّب تطوير ويب وأمن سيبراني" },
+        org: { en: "Jaouhara Mode · Marrakech", fr: "Jaouhara Mode · Marrakech", ar: "شركة جوهرة (Jaouhara Mode) · مراكش" },
+        bullets: {
+          en: [
+            "Developed B2B catalog web modules (32 product sheets) and containerized web services using <strong>Docker</strong>.",
+            "Configured secure remote tunneling (<strong>Ngrok</strong>) and automated intrusion protection via <strong>CrowdSec IPS</strong>."
+          ],
+          fr: [
+            "Développement de modules catalogue B2B (32 fiches produits) et conteneurisation des services web avec <strong>Docker</strong>.",
+            "Mise en place de tunnels sécurisés (<strong>Ngrok</strong>) et protection anti-intrusion automatisée avec <strong>CrowdSec IPS</strong>."
+          ],
+          ar: [
+            "تطوير واجهات كتالوج المنتجات (32 صفحة منتج) ونشر التطبيقات داخل حاويات <strong>Docker</strong>.",
+            "إعداد قنوات الاتصال الآمن عبر <strong>Ngrok</strong> وتفعيل الحماية التلقائية ضد الاختراق باستخدام <strong>CrowdSec IPS</strong>."
+          ]
+        }
+      },
+      {
+        date: { en: "May – Aug 2025", fr: "Mai – Août 2025", ar: "ماي – غشت 2025" },
+        role: { en: "Web Development & Graphic Design Intern", fr: "Stagiaire Développement Web & Design Graphique", ar: "متدرّب تطوير ويب وتصميم جرافيك" },
+        org: { en: 'Urbagroupe · <a href="https://urbagroupe.ma" target="_blank">urbagroupe.ma ↗</a>', fr: 'Urbagroupe · <a href="https://urbagroupe.ma" target="_blank">urbagroupe.ma ↗</a>', ar: 'مجموعة Urbagroupe · <a href="https://urbagroupe.ma" target="_blank">urbagroupe.ma ↗</a>' },
+        bullets: {
+          en: [
+            "Designed, developed, deployed, and administered the official live corporate website (<strong>urbagroupe.ma</strong>).",
+            "Produced visual campaigns, photo retouching (<strong>Photoshop</strong>), and promotional videos (<strong>After Effects</strong>)."
+          ],
+          fr: [
+            "Conception, développement, déploiement et administration du site institutionnel officiel (<strong>urbagroupe.ma</strong>).",
+            "Retouche photo, affiches promotionnelles (<strong>Photoshop</strong>) et montage vidéo corporate (<strong>After Effects</strong>)."
+          ],
+          ar: [
+            "تصميم وبرمجة ونشر وإدارة الموقع الرسمي للشركة على الإنترنت (<strong>urbagroupe.ma</strong>).",
+            "تصميم الملصقات الإعلانية ومعالجة الصور (<strong>Photoshop</strong>) ومونتاج الفيديوهات الترويجية (<strong>After Effects</strong>)."
+          ]
+        }
+      },
+      {
+        date: { en: "2021 – 2024", fr: "2021 – 2024", ar: "2021 – 2024" },
+        role: { en: "Retail Operations Associate – FMCG", fr: "Employé Libre-Service – Rayon PGC", ar: "مسؤول عمليات ومخزون — قطاع التجزئة" },
+        org: { en: "Marjane Massira · Marrakech", fr: "Marjane Massira · Marrakech", ar: "مرجان المسيرة · مراكش" },
+        bullets: {
+          en: ["Managed computerized stock control, inventory audits, supplier deliveries, and high-volume team operations with rigor and reliability."],
+          fr: ["Gestion informatisée des stocks, inventaires, réception fournisseurs et travail en équipe sous forte cadence avec rigueur."],
+          ar: ["إدارة المخزون المعلوماتي، الجرد الدوري، استلام الطلبيات والعمل ضمن فريق في بيئة عالية الوتيرة بدقة وانضباط."]
+        }
+      }
+    ];
+
+    const PROJECTS = [
+      {
+        cat: "web",
+        badge: { en: "E-Commerce", fr: "E-Commerce", ar: "تجارة إلكترونية" },
+        title: "Embro Space — Digital Embroidery Marketplace",
+        desc: {
+          en: "Full-stack Laravel 12 + Filament 3 e-commerce platform with interactive Before/After slider, 50+ collections, dark/light themes, and custom design requests.",
+          fr: "Plateforme e-commerce complète (Laravel 12 + Filament 3) avec comparateur Avant/Après, +50 collections, mode clair/sombre et demandes sur mesure.",
+          ar: "منصة تجارة إلكترونية متكاملة (Laravel 12 + Filament 3) بأداة مقارنة قبل/بعد، أكثر من 50 تصنيفاً، وضع داكن ومضيء وطلبات خاصة."
+        },
+        stack: ["Laravel 12", "Filament 3", "Tailwind 4", "MySQL"],
+        links: [
+          { label: "Live Demo ↗", url: "https://issamxx.github.io/demos/embrospace/index.html" },
+          { label: "GitHub ↗", url: "https://github.com/issamxx/embrospace" }
+        ]
+      },
+      {
+        cat: "web",
+        badge: { en: "Production", fr: "Production", ar: "موقع حي" },
+        title: "Urbagroupe — Official Corporate Website",
+        desc: {
+          en: "Official live corporate & multi-service agency website engineered, deployed, and maintained in production with responsive UX and custom media assets.",
+          fr: "Site corporate officiel en production réelle conçu, déployé et administré de bout en bout avec supports visuels et vidéos promotionnelles.",
+          ar: "الموقع الرسمي لشركة Urbagroupe المنشور فعلياً على الإنترنت بتصميم متجاوب وتنقل سريع مع جميع الوسائط الترويجية."
+        },
+        stack: ["HTML5 / CSS3", "JavaScript", "PHP", "HTTPS"],
+        links: [
+          { label: "Visit Live Site ↗", url: "https://urbagroupe.ma" }
+        ]
+      },
+      {
+        cat: "sec",
+        badge: { en: "DevSecOps", fr: "DevSecOps", ar: "أمن سيبراني" },
+        title: "Docker + CrowdSec + Ngrok Hardened Stack",
+        desc: {
+          en: "Production-hardened Docker Compose web infrastructure featuring Nginx reverse proxy (CSP, rate limiting), CrowdSec IPS protection, and secure tunneling.",
+          fr: "Infrastructure web Docker Compose durcie avec reverse proxy Nginx (CSP, rate limiting), moteur IPS CrowdSec et tunnel sécurisé Ngrok.",
+          ar: "بنية خوادم مؤمّنة بـ Docker Compose تتضمّن Nginx Reverse Proxy ونظام منع الاختراق CrowdSec IPS ونفق Ngrok الآمن."
+        },
+        stack: ["Docker", "Nginx", "CrowdSec IPS", "Ngrok"],
+        links: [
+          { label: "GitHub Repo ↗", url: "https://github.com/issamxx/docker-crowdsec-secure-stack" }
+        ]
+      },
+      {
+        cat: "sec",
+        badge: { en: "Security CLI", fr: "Audit Sécurité", ar: "أداة فحص" },
+        title: "Web Security Audit Toolkit (Python)",
+        desc: {
+          en: "Zero-dependency Python CLI performing defensive HTTP security header audits and SSL/TLS inspection with A–F scoring and JSON/Markdown reports.",
+          fr: "Outil CLI Python sans dépendances pour l'audit des en-têtes HTTP et certificats SSL/TLS avec notation A–F et export JSON/Markdown.",
+          ar: "أداة سطر أوامر بـ Python بدون مكتبات خارجية لفحص رؤوس الحماية HTTP وشهادات SSL/TLS مع تقييم A–F وتقارير JSON/Markdown."
+        },
+        stack: ["Python 3", "SSL/TLS", "HTTP Security", "Unit Tests"],
+        links: [
+          { label: "GitHub Repo ↗", url: "https://github.com/issamxx/web-security-audit-toolkit" }
+        ]
+      },
+      {
+        cat: "mob",
+        badge: { en: "Mobile App", fr: "App Mobile", ar: "تطبيق جوال" },
+        title: "Cross-Platform E-Commerce Mobile App (PFE)",
+        desc: {
+          en: "Native Android & iOS mobile shopping application built with React Native & Expo featuring dark mode, product browsing, and interactive shopping cart.",
+          fr: "Application mobile e-commerce cross-platform Android & iOS (React Native & Expo) avec mode sombre, catalogue interactif et panier complet.",
+          ar: "تطبيق تجارة إلكترونية يعمل على أندرويد وآيفون (React Native & Expo) مع الوضع الداكن وتصفّح المنتجات وسلة المشتريات."
+        },
+        stack: ["React Native", "Expo", "JavaScript", "Android / iOS"],
+        links: [
+          { label: "GitHub Repo ↗", url: "https://github.com/issamxx/my-ecommerce-mobile-app" }
+        ]
+      },
+      {
+        cat: "web",
+        badge: { en: "B2B Catalog", fr: "Catalogue B2B", ar: "كتالوج فاخر" },
+        title: "Jaouhara Mode — 32-Product Corporate Showcase",
+        desc: {
+          en: "Luxury corporate workwear & medical apparel platform showcasing 32 structured product pages, gold/white UI, realizations gallery, and direct contact.",
+          fr: "Catalogue élégant de tenues professionnelles & médicales comprenant 32 fiches produits détaillées, galerie de réalisations et contact direct.",
+          ar: "منصة عرض فاخرة للأزياء المهنية والطبية تضم 32 صفحة منتج تفصيلية، معرض إنجازات وتواصل مباشر."
+        },
+        stack: ["PHP", "Responsive UI", "32 Products", "SEO"],
+        links: [
+          { label: "Live Demo ↗", url: "https://issamxx.github.io/demos/jawhara/index.html" }
+        ]
+      }
+    ];
+
+    function renderExperience() {
+      const el = document.getElementById("expList");
+      el.innerHTML = EXPERIENCES.map(exp => `
+        <div class="exp-card">
+          <div class="exp-top">
+            <div class="exp-role">${exp.role[currentLang]}</div>
+            <span class="exp-date">${exp.date[currentLang]}</span>
+          </div>
+          <div class="exp-org">${exp.org[currentLang]}</div>
+          <ul class="exp-list">
+            ${exp.bullets[currentLang].map(b => `<li>${b}</li>`).join("")}
+          </ul>
+        </div>
+      `).join("");
+    }
+
+    function renderProjects() {
+      const grid = document.getElementById("projGrid");
+      const list = currentProjFilter === "all" ? PROJECTS : PROJECTS.filter(p => p.cat === currentProjFilter);
+      grid.innerHTML = list.map(p => `
+        <div class="proj-card">
+          <div class="proj-head">
+            <div class="proj-name">${p.title}</div>
+            <span class="proj-cat">${p.badge[currentLang]}</span>
+          </div>
+          <p class="proj-desc">${p.desc[currentLang]}</p>
+          <div class="proj-stack">${p.stack.map(s => `<span class="p-tech">${s}</span>`).join("")}</div>
+          <div class="proj-links">${p.links.map(l => `<a class="proj-link" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join("")}</div>
+        </div>
+      `).join("");
+    }
+
+    function filterProj(cat, btn) {
+      currentProjFilter = cat;
+      document.querySelectorAll(".pf-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderProjects();
+    }
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      ["en","fr","ar"].forEach(l => document.getElementById("l-" + l).classList.toggle("active", l === lang));
+      const t = I18N[lang];
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const k = el.getAttribute("data-i18n");
+        if (t[k]) el.textContent = t[k];
+      });
+      const pdfMap = { en: "pdf/Issam_Derai_CV_EN.pdf", fr: "pdf/Issam_Derai_CV_FR.pdf", ar: "pdf/Issam_Derai_CV_AR.pdf" };
+      document.getElementById("mainPdfBtn").href = pdfMap[lang];
+      renderExperience();
+      renderProjects();
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", next);
+      document.getElementById("themeBtn").textContent = next === "dark" ? "☀️" : "🌙";
+    }
+
+    setLang("en");
+  </script>
+</body>
+</html>
